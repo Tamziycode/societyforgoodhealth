@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---------------------------------------------------------------- */
+  /* Brand Colors — Society for Good Health                           */
+  /* ---------------------------------------------------------------- */
+  --color-background: #faf9f6; /* Background Warm White */
+  --color-foreground: #262626; /* Authority Charcoal (body text) */
+
+  --color-primary: #f47c20; /* Primary Orange */
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #6daa2c; /* Sustainability Green */
+  --color-secondary-foreground: #ffffff;
+
+  --color-charcoal: #262626; /* Authority Charcoal (explicit alias) */
+  --color-charcoal-foreground: #faf9f6;
+
+  /* ---------------------------------------------------------------- */
+  /* Supporting neutrals — derived for borders, muted surfaces, cards */
+  /* ---------------------------------------------------------------- */
+  --color-muted: #f0eee9;
+  --color-muted-foreground: #6b6b63;
+  --color-border: #e4e1d9;
+  --color-card: #ffffff;
+
+  /* ---------------------------------------------------------------- */
+  /* Typography — wired to next/font variables set in layout.tsx      */
+  /* ---------------------------------------------------------------- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* ---------------------------------------------------------------- */
+  /* Radius scale                                                     */
+  /* ---------------------------------------------------------------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Respect users who've asked for reduced motion — relevant for the
+   auto-playing project carousels required in this build. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
