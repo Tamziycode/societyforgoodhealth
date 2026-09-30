@@ -52,7 +52,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <article className="mx-auto max-w-3xl px-6 py-16">
       <div className="flex flex-wrap items-center gap-3">
         {project.status ? (
-          <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+          <span className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
             {STATUS_LABEL[project.status] ?? project.status}
           </span>
         ) : null}

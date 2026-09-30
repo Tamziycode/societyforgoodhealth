@@ -1,38 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---------------------------------------------------------------- */
-  /* Brand Colors — Society for Good Health                           */
-  /* ---------------------------------------------------------------- */
-  --color-background: #faf9f6; /* Background Warm White */
-  --color-foreground: #262626; /* Authority Charcoal (body text) */
+  /* SGH Brand Guidelines v1.0 */
+  --color-background: #faf6f0;
+  --color-foreground: #22312f;
 
-  --color-primary: #f47c20; /* Primary Orange */
+  --color-primary: #f26522;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #6daa2c; /* Sustainability Green */
+  --color-secondary: #0f6e78;
   --color-secondary-foreground: #ffffff;
 
-  --color-charcoal: #262626; /* Authority Charcoal (explicit alias) */
-  --color-charcoal-foreground: #faf9f6;
+  --color-accent: #f5a623;
+  --color-accent-foreground: #22312f;
 
-  /* ---------------------------------------------------------------- */
-  /* Supporting neutrals — derived for borders, muted surfaces, cards */
-  /* ---------------------------------------------------------------- */
-  --color-muted: #f0eee9;
-  --color-muted-foreground: #6b6b63;
-  --color-border: #e4e1d9;
+  --color-charcoal: #22312f;
+  --color-charcoal-foreground: #faf6f0;
+
+  --color-stone: #8a9391;
+
+  --color-muted: #f1ede5;
+  --color-muted-foreground: #58625f;
+  --color-border: rgb(34 49 47 / 0.14);
   --color-card: #ffffff;
 
-  /* ---------------------------------------------------------------- */
-  /* Typography — wired to next/font variables set in layout.tsx      */
-  /* ---------------------------------------------------------------- */
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), Georgia, serif;
 
-  /* ---------------------------------------------------------------- */
-  /* Radius scale                                                     */
-  /* ---------------------------------------------------------------- */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -51,13 +45,18 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
   }
 }
 
-/* Respect users who've asked for reduced motion — relevant for the
-   auto-playing project carousels required in this build. */
+@layer utilities {
+  /* SGH signature card shape: sharp on three corners, one soft corner */
+  .shape-card {
+    border-radius: 4px 40px 4px 4px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

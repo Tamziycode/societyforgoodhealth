@@ -32,13 +32,13 @@ export default async function Home() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/projects"
-              className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              className="rounded-lg bg-primary px-7 py-3 text-xl font-bold text-primary-foreground transition hover:brightness-95"
             >
               See Our Work
             </Link>
             <Link
               href="/blog"
-              className="rounded-lg border border-secondary/40 px-6 py-3 font-semibold text-charcoal-foreground transition-colors hover:border-secondary"
+              className="rounded-lg border border-charcoal-foreground/40 px-7 py-3 text-xl font-bold text-charcoal-foreground transition-colors hover:border-charcoal-foreground"
             >
               Read Our Blog
             </Link>
@@ -57,7 +57,7 @@ export default async function Home() {
             </h2>
             <Link
               href="/projects"
-              className="text-sm font-medium text-secondary hover:text-primary"
+              className="text-sm font-medium text-secondary hover:underline"
             >
               View all →
             </Link>
@@ -72,7 +72,7 @@ export default async function Home() {
 
       {latestPosts.length > 0 ? (
         <section className="mx-auto max-w-6xl px-6 py-16">
-          <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <span className="text-sm font-semibold uppercase tracking-wide text-secondary">
             From the Blog
           </span>
           <div className="mt-1 flex items-end justify-between">
@@ -81,7 +81,7 @@ export default async function Home() {
             </h2>
             <Link
               href="/blog"
-              className="text-sm font-medium text-secondary hover:text-primary"
+              className="text-sm font-medium text-secondary hover:underline"
             >
               View all →
             </Link>

@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
+
 import { getSiteSettings } from "@/sanity/lib/queries";
+
 import { NAV_LINKS } from "./nav-links";
 
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -42,10 +45,18 @@ export async function Footer() {
   ].filter((s): s is typeof s & { href: string } => Boolean(s.href));
 
   return (
-    <footer className="mt-24 border-t-4 border-t-secondary bg-charcoal text-charcoal-foreground">
+    <footer className="mt-24 border-t-4 border-t-primary bg-charcoal text-charcoal-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <h2 className="text-lg font-semibold">{siteTitle}</h2>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/brand/sgh-mark-reversed.png"
+              alt=""
+              width={40}
+              height={40}
+            />
+            <h2 className="text-lg font-semibold">{siteTitle}</h2>
+          </div>
           {settings?.description ? (
             <p className="mt-3 max-w-sm text-sm text-charcoal-foreground/70">
               {settings.description}
@@ -62,7 +73,7 @@ export async function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm transition-colors hover:text-primary"
+                  className="text-sm transition-colors hover:text-accent"
                 >
                   {link.label}
                 </Link>
@@ -78,7 +89,7 @@ export async function Footer() {
           {settings?.contactEmail ? (
             <a
               href={`mailto:${settings.contactEmail}`}
-              className="mt-4 block text-sm transition-colors hover:text-primary"
+              className="mt-4 block text-sm transition-colors hover:text-accent"
             >
               {settings.contactEmail}
             </a>
@@ -93,7 +104,7 @@ export async function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-charcoal-foreground/70 transition-colors hover:text-primary"
+                  className="text-charcoal-foreground/70 transition-colors hover:text-accent"
                 >
                   <Icon width={20} height={20} />
                 </a>
@@ -104,7 +115,7 @@ export async function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-charcoal-foreground/50">
+        <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-charcoal-foreground/60">
           © {year} {siteTitle}. All rights reserved.
         </p>
       </div>

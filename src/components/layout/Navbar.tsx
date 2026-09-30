@@ -35,7 +35,7 @@ export async function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                  className="text-sm font-medium text-foreground transition-colors hover:text-secondary"
                 >
                   {link.label}
                 </Link>

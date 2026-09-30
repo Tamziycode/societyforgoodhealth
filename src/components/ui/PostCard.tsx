@@ -8,7 +8,7 @@ import { CategoryBadges } from "./CategoryBadges";
 
 export function PostCard({ post }: { post: PostListItem }) {
   return (
-    <article className="group overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-secondary">
+    <article className="group overflow-hidden shape-card border border-border bg-card transition-colors hover:border-secondary">
       <Link href={`/blog/${post.slug}`}>
         <div className="relative aspect-[4/3] overflow-hidden bg-muted">
           {post.mainImage ? (
@@ -31,12 +31,12 @@ export function PostCard({ post }: { post: PostListItem }) {
           <CategoryBadges categories={post.categories} />
         ) : null}
         <Link href={`/blog/${post.slug}`}>
-          <h3 className="mt-3 text-lg font-semibold text-charcoal transition-colors group-hover:text-primary">
+          <h3 className="mt-3 text-lg font-semibold text-charcoal transition-colors group-hover:text-secondary">
             {post.title}
           </h3>
         </Link>
         {post.excerpt ? (
-          <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+          <p className="mt-2 line-clamp-2 text-sm font-serif text-muted-foreground">
             {post.excerpt}
           </p>
         ) : null}

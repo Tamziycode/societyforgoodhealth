@@ -33,7 +33,7 @@ export default async function ContactPage() {
             const isEmail = detail.label.toLowerCase().includes("email");
             return (
               <div key={index} className="flex items-start gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                   <Icon size={18} />
                 </span>
                 <div>
@@ -48,7 +48,7 @@ export default async function ContactPage() {
                             ? `mailto:${detail.value}`
                             : `tel:${detail.value.replace(/[^+\d]/g, "")}`
                         }
-                        className="transition-colors hover:text-primary"
+                        className="transition-colors hover:text-secondary"
                       >
                         {detail.value}
                       </a>
@@ -68,7 +68,7 @@ export default async function ContactPage() {
               Reach us at{" "}
               <a
                 href={`mailto:${settings.contactEmail}`}
-                className="text-secondary hover:text-primary"
+                className="text-secondary hover:text-secondary"
               >
                 {settings.contactEmail}
               </a>

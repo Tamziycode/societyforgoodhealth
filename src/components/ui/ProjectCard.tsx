@@ -14,7 +14,7 @@ const STATUS_LABEL: Record<string, string> = {
 
 export function ProjectCard({ project }: { project: ProjectListItem }) {
   return (
-    <article className="group overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-secondary">
+    <article className="group overflow-hidden shape-card border border-border bg-card transition-colors hover:border-secondary">
       <Link href={`/projects/${project.slug}`}>
         <div className="relative aspect-[4/3] overflow-hidden bg-muted">
           {project.mainImage ? (
@@ -31,7 +31,7 @@ export function ProjectCard({ project }: { project: ProjectListItem }) {
             />
           ) : null}
           {project.status ? (
-            <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+            <span className="absolute left-3 top-3 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
               {STATUS_LABEL[project.status] ?? project.status}
             </span>
           ) : null}
@@ -42,12 +42,12 @@ export function ProjectCard({ project }: { project: ProjectListItem }) {
           <CategoryBadges categories={project.categories} />
         ) : null}
         <Link href={`/projects/${project.slug}`}>
-          <h3 className="mt-3 text-lg font-semibold text-charcoal transition-colors group-hover:text-primary">
+          <h3 className="mt-3 text-lg font-semibold text-charcoal transition-colors group-hover:text-secondary">
             {project.title}
           </h3>
         </Link>
         {project.summary ? (
-          <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+          <p className="mt-2 line-clamp-2 text-sm font-serif text-muted-foreground">
             {project.summary}
           </p>
         ) : null}

@@ -14,7 +14,7 @@ export default async function ResearchPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
-      <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+      <span className="text-sm font-semibold uppercase tracking-wide text-secondary">
         Our Focus
       </span>
       <h1 className="mt-2 text-3xl font-bold text-charcoal">Research</h1>

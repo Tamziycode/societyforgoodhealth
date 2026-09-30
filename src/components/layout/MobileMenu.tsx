@@ -32,7 +32,7 @@ export function MobileMenu() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block text-base font-medium text-foreground transition-colors hover:text-primary"
+                  className="block text-base font-medium text-foreground transition-colors hover:text-secondary"
                 >
                   {link.label}
                 </Link>
