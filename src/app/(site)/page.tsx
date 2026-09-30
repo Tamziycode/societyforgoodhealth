@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Testimonial } from "@/components/ui/Testimonial";
 import { PostCard } from "@/components/ui/PostCard";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import {
@@ -25,7 +26,7 @@ export default async function Home() {
           <h1 className="mx-auto max-w-2xl text-4xl font-bold sm:text-5xl">
             {settings?.title ?? "Society for Good Health"}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-charcoal-foreground/70">
+          <p className="mx-auto mt-6 max-w-xl font-serif text-charcoal-foreground/70">
             {settings?.description ??
               "Working alongside communities to build lasting, healthier futures."}
           </p>
@@ -68,6 +69,10 @@ export default async function Home() {
             ))}
           </div>
         </section>
+      ) : null}
+
+      {settings?.testimonial ? (
+        <Testimonial testimonial={settings.testimonial} />
       ) : null}
 
       {latestPosts.length > 0 ? (

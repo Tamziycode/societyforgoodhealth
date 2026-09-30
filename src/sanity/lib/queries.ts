@@ -77,6 +77,13 @@ export interface ContactDetail {
   isLink?: boolean;
 }
 
+export interface Testimonial {
+  quote: string;
+  authorName: string;
+  authorRole?: string;
+  photo?: SanityImage;
+}
+
 export interface SiteSettings {
   title: string;
   description?: string;
@@ -90,6 +97,7 @@ export interface SiteSettings {
   aboutContent?: any[];
   researchAreas?: ResearchArea[];
   contactDetails?: ContactDetail[];
+  testimonial?: Testimonial;
 }
 
 export interface CategoryWithContent {
@@ -268,7 +276,8 @@ const siteSettingsQuery = groq`
     socialLinks,
     aboutContent,
     researchAreas,
-    contactDetails
+    contactDetails,
+    testimonial
   }
 `;
 

@@ -32,7 +32,6 @@ export const siteSettings = defineType({
       title: "Contact Email",
       type: "string",
     }),
-
     defineField({
       name: "aboutContent",
       title: "About Page Content",
@@ -104,6 +103,46 @@ export const siteSettings = defineType({
             select: { title: "label", subtitle: "value" },
           },
         },
+      ],
+    }),
+    defineField({
+      name: "testimonial",
+      title: "Homepage Testimonial",
+      type: "object",
+      description: "A quote shown in the homepage story section.",
+      fields: [
+        defineField({
+          name: "quote",
+          title: "Quote",
+          type: "text",
+          rows: 4,
+          validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+          name: "authorName",
+          title: "Author Name",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+          name: "authorRole",
+          title: "Author Role",
+          type: "string",
+          description: 'e.g. "Community Health Volunteer, Ibadan"',
+        }),
+        defineField({
+          name: "photo",
+          title: "Photo",
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Alternative Text",
+              type: "string",
+            }),
+          ],
+        }),
       ],
     }),
     defineField({
