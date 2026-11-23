@@ -45,7 +45,7 @@ export async function Footer() {
   ].filter((s): s is typeof s & { href: string } => Boolean(s.href));
 
   return (
-    <footer className="mt-24 border-t-4 border-t-primary bg-charcoal text-charcoal-foreground">
+    <footer className="mt-24 border-t-4 border-t-charcoal bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
@@ -58,14 +58,14 @@ export async function Footer() {
             <h2 className="text-lg font-semibold">{siteTitle}</h2>
           </div>
           {settings?.description ? (
-            <p className="mt-3 max-w-sm text-sm text-charcoal-foreground/70">
+            <p className="mt-3 max-w-sm text-sm text-primary-foreground/80">
               {settings.description}
             </p>
           ) : null}
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-charcoal-foreground/60">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary-foreground/70">
             Quick Links
           </h3>
           <ul className="mt-4 space-y-2">
@@ -73,7 +73,7 @@ export async function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm transition-colors hover:text-accent"
+                  className="text-sm transition-colors hover:underline"
                 >
                   {link.label}
                 </Link>
@@ -83,13 +83,13 @@ export async function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-charcoal-foreground/60">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary-foreground/70">
             Connect
           </h3>
           {settings?.contactEmail ? (
             <a
               href={`mailto:${settings.contactEmail}`}
-              className="mt-4 block text-sm transition-colors hover:text-accent"
+              className="mt-4 block text-sm transition-colors hover:underline"
             >
               {settings.contactEmail}
             </a>
@@ -104,7 +104,7 @@ export async function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-charcoal-foreground/70 transition-colors hover:text-accent"
+                  className="text-primary-foreground/80 transition-opacity hover:opacity-100"
                 >
                   <Icon width={20} height={20} />
                 </a>
@@ -114,8 +114,8 @@ export async function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-charcoal-foreground/60">
+      <div className="border-t border-charcoal/15">
+        <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-primary-foreground/70">
           © {year} {siteTitle}. All rights reserved.
         </p>
       </div>

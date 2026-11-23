@@ -51,9 +51,11 @@
 }
 
 @layer utilities {
-  /* SGH signature card shape: sharp on three corners, one soft corner */
   .shape-card {
     border-radius: 4px 40px 4px 4px;
+  }
+  .shape-feature {
+    border-radius: 4px 64px 4px 4px;
   }
 }
 

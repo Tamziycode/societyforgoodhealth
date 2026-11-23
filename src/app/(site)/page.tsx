@@ -1,8 +1,7 @@
 import Link from "next/link";
 
 import { Testimonial } from "@/components/ui/Testimonial";
-import { PostCard } from "@/components/ui/PostCard";
-import { ProjectCard } from "@/components/ui/ProjectCard";
+import { FeatureBlock } from "@/components/ui/FeatureBlock";
 import {
   getAllPosts,
   getAllProjects,
@@ -21,25 +20,25 @@ export default async function Home() {
 
   return (
     <>
-      <section className="bg-charcoal text-charcoal-foreground">
+      <section className="bg-primary">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <h1 className="mx-auto max-w-2xl text-4xl font-bold sm:text-5xl">
+          <h1 className="mx-auto max-w-2xl text-4xl font-bold text-white sm:text-5xl">
             {settings?.title ?? "Society for Good Health"}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl font-serif text-charcoal-foreground/70">
+          <p className="mx-auto mt-6 max-w-xl text-xl font-serif font-bold text-white">
             {settings?.description ??
               "Working alongside communities to build lasting, healthier futures."}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/projects"
-              className="rounded-lg bg-primary px-7 py-3 text-xl font-bold text-primary-foreground transition hover:brightness-95"
+              className="rounded-lg bg-charcoal px-7 py-3 text-xl font-bold text-charcoal-foreground transition hover:brightness-110"
             >
               See Our Work
             </Link>
             <Link
               href="/blog"
-              className="rounded-lg border border-charcoal-foreground/40 px-7 py-3 text-xl font-bold text-charcoal-foreground transition-colors hover:border-charcoal-foreground"
+              className="rounded-lg border-2 border-charcoal/50 px-7 py-3 text-xl font-bold text-white transition-colors hover:border-charcoal"
             >
               Read Our Blog
             </Link>
@@ -62,10 +61,19 @@ export default async function Home() {
             >
               View all →
             </Link>
-          </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {latestProjects.map((project) => (
-              <ProjectCard key={project._id} project={project} />
+          </div>{" "}
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {latestProjects.map((project, i) => (
+              <FeatureBlock
+                key={project._id}
+                href={`/projects/${project.slug}`}
+                eyebrow={project.categories?.[0]?.title ?? "Project"}
+                title={project.title}
+                description={project.summary}
+                image={project.mainImage}
+                colorIndex={i as 0 | 1 | 2}
+                large={i === 0}
+              />
             ))}
           </div>
         </section>
@@ -91,9 +99,18 @@ export default async function Home() {
               View all →
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {latestPosts.map((post) => (
-              <PostCard key={post._id} post={post} />
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {latestPosts.map((post, i) => (
+              <FeatureBlock
+                key={post._id}
+                href={`/blog/${post.slug}`}
+                eyebrow={post.categories?.[0]?.title ?? "Article"}
+                title={post.title}
+                description={post.excerpt}
+                image={post.mainImage}
+                colorIndex={i as 0 | 1 | 2}
+                large={i === 0}
+              />
             ))}
           </div>
         </section>

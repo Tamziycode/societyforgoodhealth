@@ -17,11 +17,11 @@ export async function Navbar() {
         <Link href="/" className="flex items-center gap-3">
           {settings?.logo ? (
             <Image
-              src={urlFor(settings.logo).width(40).height(40).fit("crop").url()}
-              alt={siteTitle}
+              src="/brand/sgh-mark-primary.png"
+              alt=""
               width={40}
               height={40}
-              className="rounded-md"
+              priority
             />
           ) : null}
           <span className="text-lg font-semibold text-charcoal">
