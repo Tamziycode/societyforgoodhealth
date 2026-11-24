@@ -20,12 +20,12 @@ export default async function Home() {
 
   return (
     <>
-      <section className="bg-primary">
+      <section className="border-b border-border bg-primary/50">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <h1 className="mx-auto max-w-2xl text-4xl font-bold text-white sm:text-5xl">
+          <h1 className="mx-auto max-w-2xl text-4xl font-bold text-charcoal sm:text-5xl">
             {settings?.title ?? "Society for Good Health"}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-xl font-serif font-bold text-white">
+          <p className="mx-auto mt-6 max-w-xl text-xl font-serif font-bold text-charcoal/90">
             {settings?.description ??
               "Working alongside communities to build lasting, healthier futures."}
           </p>
@@ -38,7 +38,7 @@ export default async function Home() {
             </Link>
             <Link
               href="/blog"
-              className="rounded-lg border-2 border-charcoal/50 px-7 py-3 text-xl font-bold text-white transition-colors hover:border-charcoal"
+              className="rounded-lg border-2 border-charcoal/50 px-7 py-3 text-xl font-bold text-charcoal transition-colors hover:border-charcoal"
             >
               Read Our Blog
             </Link>
