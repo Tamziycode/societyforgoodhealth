@@ -50,7 +50,7 @@ export async function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Image
-              src="/brand/sgh-mark-mono-white.png"
+              src="/brand/sgh-mark-reversed.png"
               alt=""
               width={40}
               height={40}

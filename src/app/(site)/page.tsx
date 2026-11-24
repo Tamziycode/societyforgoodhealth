@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Testimonial } from "@/components/ui/Testimonial";
@@ -20,12 +21,22 @@ export default async function Home() {
 
   return (
     <>
-      <section className="border-b border-border bg-primary/50">
-        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <h1 className="mx-auto max-w-2xl text-4xl font-bold text-charcoal sm:text-5xl">
+      <section className="relative overflow-hidden bg-primary">
+        <Image
+          src="/brand/oyo.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-primary/75" />
+
+        <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 text-center">
+          <h1 className="mx-auto max-w-2xl text-4xl font-bold text-white sm:text-5xl">
             {settings?.title ?? "Society for Good Health"}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-xl font-serif font-bold text-charcoal/90">
+          <p className="mx-auto mt-6 max-w-xl text-xl font-serif font-bold text-white">
             {settings?.description ??
               "Working alongside communities to build lasting, healthier futures."}
           </p>
@@ -38,7 +49,7 @@ export default async function Home() {
             </Link>
             <Link
               href="/blog"
-              className="rounded-lg border-2 border-charcoal/50 px-7 py-3 text-xl font-bold text-charcoal transition-colors hover:border-charcoal"
+              className="rounded-lg border-2 border-white/75 px-7 py-3 text-xl font-bold text-white transition-colors hover:border-white hover:bg-white/10"
             >
               Read Our Blog
             </Link>
