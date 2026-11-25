@@ -45,7 +45,7 @@ export async function Footer() {
   ].filter((s): s is typeof s & { href: string } => Boolean(s.href));
 
   return (
-    <footer className="mt-24 border-t-4 border-t-charcoal bg-secondary text-secondary-foreground">
+    <footer className="mt-24 border-t-4 border-t-primary bg-charcoal text-charcoal-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
@@ -58,14 +58,14 @@ export async function Footer() {
             <h2 className="text-lg font-semibold">{siteTitle}</h2>
           </div>
           {settings?.description ? (
-            <p className="mt-3 max-w-sm text-sm text-secondary-foreground/80">
+            <p className="mt-3 max-w-sm text-sm text-charcoal-foreground/80">
               {settings.description}
             </p>
           ) : null}
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-secondary-foreground/70">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-charcoal-foreground/70">
             Quick Links
           </h3>
           <ul className="mt-4 space-y-2">
@@ -83,7 +83,7 @@ export async function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-secondary-foreground/70">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-charcoal-foreground/70">
             Connect
           </h3>
           {settings?.contactEmail ? (
@@ -104,7 +104,7 @@ export async function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-secondary-foreground/80 transition-opacity hover:opacity-100"
+                  className="text-charcoal-foreground/80 transition-opacity hover:opacity-100"
                 >
                   <Icon width={20} height={20} />
                 </a>
@@ -114,8 +114,8 @@ export async function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-secondary-foreground/15">
-        <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-secondary-foreground/70">
+      <div className="border-t border-charcoal-foreground/15">
+        <p className="mx-auto max-w-6xl px-6 py-6 text-xs text-charcoal-foreground/70">
           © {year} {siteTitle}. All rights reserved.
         </p>
       </div>
